@@ -29,4 +29,3 @@ module.exports = mongoose.model('User', userSchema);
 
 
 // Bring the userSchem model to the userController
-
