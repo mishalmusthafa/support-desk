@@ -1,25 +1,26 @@
 const mongoose = require('mongoose');
 
+
 const ticketSchema = mongoose.Schema({
-  name: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     require: true,
-    ref:'User'
+    ref: 'User'
   },
   product: {
     type: String,
     require: [true, 'Please select a Product'],
-    enum:['iphone','Macbook Pro', 'iMac', 'iPad'], //change the product from here
+    enum: ['iPhone', 'Macbook Pro', 'iMac', 'iPad'], //change the product from here
   },
   description: {
     type: String,
     require: [true, 'Please add the description of the issue']
   },
   status: {
-    type: string,
+    type: String,
     required: true,
-    enum:['new', 'open', 'closed'],
-    default:['new']
+    enum: ['new', 'open', 'closed'],
+    default: ['new']
   }
 },
   {
@@ -27,7 +28,7 @@ const ticketSchema = mongoose.Schema({
   }
 );
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Ticket', ticketSchema);
 
 
 // Bring the userSchem model to the userController
