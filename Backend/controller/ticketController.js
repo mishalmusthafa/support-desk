@@ -23,6 +23,7 @@ const getTickets = asyncHandler(async (req, res) => {
 // @route Get /api/tickets/:id
 // @access Private
 const getTicket = asyncHandler(async (req, res) => {
+  
   // Get user useing id in JWT
   const user = await User.findById(req.user.id);
 
